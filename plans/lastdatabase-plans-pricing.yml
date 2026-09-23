@@ -1,0 +1,41 @@
+generated: '2026-09-23'
+method: searched
+source: https://lastdatabase.com/api
+name: LastDatabase API Plans
+audience: developer-api
+pricing_basis: tiered-subscription
+published: true
+currency: USD
+delivery:
+  delivery: managed
+plans:
+- name: Free
+  price: 0
+  price_text: $0 / month
+  billing_period: month
+  features:
+  - 1 API key
+  - Basic API access
+  limits:
+  - 100 API requests per day
+- name: Pro
+  price: 99
+  price_text: $99 / month
+  billing_period: month
+  features:
+  - Up to 10 API keys
+  - Advanced API access
+  limits:
+  - 10,000 API requests per day
+- name: Enterprise
+  price: 499
+  price_text: $499 / month
+  billing_period: month
+  features:
+  - Up to 100 API keys
+  - Enterprise API access
+  limits:
+  - 100,000 API requests per day
+plan_count: 3
+note: These are the Lead Search API plans on the API service page. Data-list purchases and record subscriptions (used by the MCP unlock path)
+  are priced separately on https://lastdatabase.com/pricing and are not API pricing.

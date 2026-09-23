@@ -1,0 +1,40 @@
+generated: '2026-09-23'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/lastdatabase-openapi.yml
+vocabulary:
+  name: LastDatabase Domain Vocabulary
+  description: 'Terms declared by LastDatabase''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-09-23'
+  terms:
+  - term: Leads
+    definition: Search supported LastDatabase lead inventory.
+    tags:
+    - Resource Group
+    source: openapi/lastdatabase-openapi.yml
+  - term: LeadSearchResponse
+    definition: 'Object declared by the contract with fields: status, type, count, data.'
+    tags:
+    - Object
+    source: openapi/lastdatabase-openapi.yml#/components/schemas/LeadSearchResponse
+  - term: EmailLead
+    definition: Email lead record. Additional fields may be returned by the underlying email inventory.
+    tags:
+    - Object
+    source: openapi/lastdatabase-openapi.yml#/components/schemas/EmailLead
+  - term: PhoneLead
+    definition: Phone lead record. Additional fields may be returned by the underlying phone inventory.
+    tags:
+    - Object
+    source: openapi/lastdatabase-openapi.yml#/components/schemas/PhoneLead
+  - term: FaxLead
+    definition: 'Object declared by the contract with fields: id, package_id, company_name, fax_number, industry, country, city, source, optin_status.'
+    tags:
+    - Object
+    source: openapi/lastdatabase-openapi.yml#/components/schemas/FaxLead
+  - term: ErrorResponse
+    definition: 'Object declared by the contract with fields: status, message.'
+    tags:
+    - Object
+    source: openapi/lastdatabase-openapi.yml#/components/schemas/ErrorResponse

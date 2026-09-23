@@ -1,0 +1,149 @@
+{
+  "@context": {
+    "@vocab": "https://lastdatabase.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "lastdatabase": "https://lastdatabase.com/schema#",
+    "LeadSearchResponse": "lastdatabase:LeadSearchResponse",
+    "status": {
+      "@id": "lastdatabase:status",
+      "@type": "xsd:boolean"
+    },
+    "type": {
+      "@id": "lastdatabase:type",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "lastdatabase:count",
+      "@type": "xsd:integer"
+    },
+    "data": {
+      "@id": "lastdatabase:data",
+      "@container": "@list"
+    },
+    "EmailLead": "lastdatabase:EmailLead",
+    "id": {
+      "@id": "lastdatabase:id",
+      "@type": "xsd:integer"
+    },
+    "package_id": {
+      "@id": "lastdatabase:package_id",
+      "@type": "xsd:integer"
+    },
+    "first_name": {
+      "@id": "lastdatabase:first_name",
+      "@type": "xsd:string"
+    },
+    "last_name": {
+      "@id": "lastdatabase:last_name",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "lastdatabase:email",
+      "@type": "xsd:string"
+    },
+    "company_name": {
+      "@id": "lastdatabase:company_name",
+      "@type": "xsd:string"
+    },
+    "company_website": {
+      "@id": "lastdatabase:company_website",
+      "@type": "xsd:string"
+    },
+    "linkedin_url": {
+      "@id": "lastdatabase:linkedin_url",
+      "@type": "xsd:string"
+    },
+    "employee_size": {
+      "@id": "lastdatabase:employee_size",
+      "@type": "xsd:string"
+    },
+    "revenue": {
+      "@id": "lastdatabase:revenue",
+      "@type": "xsd:string"
+    },
+    "seniority": {
+      "@id": "lastdatabase:seniority",
+      "@type": "xsd:string"
+    },
+    "technology": {
+      "@id": "lastdatabase:technology",
+      "@type": "xsd:string"
+    },
+    "job_title": {
+      "@id": "lastdatabase:job_title",
+      "@type": "xsd:string"
+    },
+    "industry": {
+      "@id": "lastdatabase:industry",
+      "@type": "xsd:string"
+    },
+    "country": {
+      "@id": "lastdatabase:country",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "lastdatabase:state",
+      "@type": "xsd:string"
+    },
+    "postal_code": {
+      "@id": "lastdatabase:postal_code",
+      "@type": "xsd:string"
+    },
+    "city": {
+      "@id": "lastdatabase:city",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "lastdatabase:source",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "lastdatabase:created_at",
+      "@type": "xsd:string"
+    },
+    "PhoneLead": "lastdatabase:PhoneLead",
+    "phone_number": {
+      "@id": "lastdatabase:phone_number",
+      "@type": "xsd:string"
+    },
+    "country_code": {
+      "@id": "lastdatabase:country_code",
+      "@type": "xsd:string"
+    },
+    "carrier": {
+      "@id": "lastdatabase:carrier",
+      "@type": "xsd:string"
+    },
+    "category": {
+      "@id": "lastdatabase:category",
+      "@type": "xsd:string"
+    },
+    "optin_status": {
+      "@id": "lastdatabase:optin_status",
+      "@type": "xsd:boolean"
+    },
+    "updated_at": {
+      "@id": "lastdatabase:updated_at",
+      "@type": "xsd:string"
+    },
+    "FaxLead": "lastdatabase:FaxLead",
+    "fax_number": {
+      "@id": "lastdatabase:fax_number",
+      "@type": "xsd:string"
+    },
+    "ErrorResponse": "lastdatabase:ErrorResponse",
+    "message": {
+      "@id": "lastdatabase:message",
+      "@type": "xsd:string"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "LastDatabase API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects LastDatabase's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-23) from openapi/lastdatabase-openapi.yml.",
+  "dcterms:created": "2026-09-23",
+  "dcterms:source": [
+    "openapi/lastdatabase-openapi.yml"
+  ]
+}

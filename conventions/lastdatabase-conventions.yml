@@ -1,0 +1,33 @@
+generated: '2026-09-23'
+method: searched
+source: https://lastdatabase.com/api
+authentication:
+  rest: 'Bearer API key in the Authorization header (Authorization: Bearer YOUR_API_KEY); keys are generated and disabled from the customer API Keys area.'
+  mcp: OAuth 2.0 authorization code with PKCE (S256), scope-aware tool discovery; see scopes/lastdatabase-scopes.yml.
+  ref: authentication/lastdatabase-authentication.yml
+idempotency:
+  coverage: na
+  note: The REST surface is a single read-only GET (searchLeads); there is no mutating REST operation and no idempotency key. The MCP unlock_people tool documents replay-safe behaviour ("A contact already owned by the customer is not charged again") but no idempotency key.
+reversibility:
+  coverage: na
+  note: The REST API is read-only. On MCP, unlock_people consumes a subscription record on success and no reversal (refund/undo) path or window is documented; a failed or inconclusive JIT verification consumes nothing.
+pagination:
+  style: limit-only
+  params: [limit]
+  note: limit defaults to 25 and is capped at 100; no offset/cursor parameter is published in the OpenAPI.
+response_envelope:
+  fields: [status, type, count, data]
+  source: https://lastdatabase.com/api
+error_envelope:
+  shape: '{"message": "..."} (ErrorResponse in the OpenAPI); MCP tools return named error codes'
+  ref: errors/lastdatabase-error-codes.yml
+versioning:
+  scheme: none published
+  note: The OpenAPI is info.version 1.0.0; paths are unversioned (/api/leads/search).
+rate_limit_signaling:
+  status: 429
+  headers: none documented
+  ref: rate-limits/lastdatabase-rate-limits.yml
+request_tracing: none documented
+field_expansion: none
+metadata: none

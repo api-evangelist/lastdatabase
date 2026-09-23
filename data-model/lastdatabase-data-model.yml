@@ -1,0 +1,36 @@
+generated: '2026-09-23'
+method: derived
+generator: derive-data-model.py
+source:
+- openapi/lastdatabase-openapi.yml
+notation: has_one = property $ref; has_many = array of $ref; belongs_to = <entity>_id field
+summary:
+  entities: 5
+  entities_in_spec: 5
+  relationships: 3
+entities:
+- name: EmailLead
+  fields: 20
+  description: Email lead record. Additional fields may be returned
+- name: ErrorResponse
+  fields: 2
+- name: FaxLead
+  fields: 9
+- name: LeadSearchResponse
+  fields: 4
+- name: PhoneLead
+  fields: 22
+  description: Phone lead record. Additional fields may be returned
+relationships:
+- from: LeadSearchResponse
+  to: EmailLead
+  type: has_many
+  via: data
+- from: LeadSearchResponse
+  to: PhoneLead
+  type: has_many
+  via: data
+- from: LeadSearchResponse
+  to: FaxLead
+  type: has_many
+  via: data

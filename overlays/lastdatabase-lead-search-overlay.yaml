@@ -1,0 +1,27 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements to the LastDatabase Lead Search API
+  version: 1.0.0
+  x-generated: '2026-09-23'
+  x-method: generated
+  x-source: https://lastdatabase.com/api
+extends: ../openapi/lastdatabase-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-documentation: https://lastdatabase.com/docs/api
+    x-pricing: https://lastdatabase.com/api
+- target: $.paths['/api/leads/search'].get
+  update:
+    x-rate-limit:
+      scope: per API key
+      window: 1 day
+      plans:
+        Free: 100 API requests per day
+        Pro: 10,000 API requests per day
+        Enterprise: 100,000 API requests per day
+      exhaustion_status: 429
+    x-read-only: true
+- target: $.paths['/api/leads/search'].get.responses['429']
+  update:
+    x-retry-guidance: When the daily limit is reached, additional requests are blocked until the usage period resets.

@@ -1,0 +1,60 @@
+generated: '2026-09-23'
+method: searched
+source: https://lastdatabase.com/docs/mcp
+status: live
+name: LastDatabase MCP Server
+server:
+  url: https://lastdatabase.com/mcp
+  transport: streamable-http
+  docs: https://lastdatabase.com/docs/mcp
+  overview: https://lastdatabase.com/mcp-server
+deployment:
+  mode: remote
+  endpoint: https://lastdatabase.com/mcp
+  auth: oauth
+  verified: probed
+  probe:
+    request: POST https://lastdatabase.com/mcp tools/list (anonymous)
+    status: 401
+    www_authenticate: Bearer resource_metadata="https://lastdatabase.com/.well-known/oauth-protected-resource/mcp"
+auth:
+  type: oauth2
+  protected_resource_metadata: https://lastdatabase.com/.well-known/oauth-protected-resource/mcp
+  authorization_server_metadata: https://lastdatabase.com/.well-known/oauth-authorization-server
+  authorization_endpoint: https://lastdatabase.com/oauth/authorize
+  token_endpoint: https://lastdatabase.com/oauth/token
+  grant_types: [authorization_code, refresh_token]
+  pkce: S256
+  client_id_metadata_document_supported: true
+  note: Tool discovery is scope-aware; the live tools/list is auth-gated, so tool names, scopes, arguments and annotations below are transcribed from the provider's MCP documentation page, not from introspection.
+tools:
+- name: search_people
+  description: Search LastDatabase B2B contacts using supported targeting filters. Search does not consume a record; protected emails are masked.
+  scope: people:search
+  annotations: {readOnlyHint: true, destructiveHint: false, openWorldHint: false}
+  arguments: [country, state, city, industry, job_title, company_name, seniority, technology, limit]
+  limits: limit minimum 1, maximum 50, default 25; at least one search filter is required
+- name: unlock_people
+  description: Attempt to unlock one selected B2B contact after entitlement, suppression and JIT verification checks. A new subscription record is consumed only after the contact satisfies the required delivery checks.
+  scope: people:search
+  annotations: {readOnlyHint: false, destructiveHint: false, openWorldHint: false}
+  arguments: [lead_id]
+- name: verify_email
+  description: Verify a supplied business email address with the LastDatabase verification engine.
+  scope: email:verify
+  annotations: {readOnlyHint: false, destructiveHint: false, openWorldHint: true}
+  arguments: [email]
+- name: get_credits
+  description: Return the connected customer's subscription record allowance. Accepts no arguments.
+  scope: credits:read
+  annotations: {readOnlyHint: true, destructiveHint: false, openWorldHint: false}
+  arguments: []
+errors:
+- {code: insufficient_scope, meaning: The connected authorization does not grant the required tool scope.}
+- {code: invalid_arguments, meaning: A tool received missing or invalid input.}
+- {code: search_filter_required, meaning: Contact search requires at least one targeting filter.}
+- {code: purchase_required, meaning: The contact requires an eligible subscription allowance or previous paid purchase.}
+- {code: lead_unavailable, meaning: The selected lead is not currently available for unlock.}
+- {code: verification_inconclusive, meaning: JIT verification could not reach a definitive result. No record is consumed.}
+- {code: email_not_valid, meaning: Verification did not qualify the email for verified delivery. The protected email is not revealed and no record is consumed.}
+- {code: unknown_tool, meaning: The requested MCP tool name is not recognized.}

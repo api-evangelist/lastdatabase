@@ -1,0 +1,157 @@
+name: LastDatabase
+aid: lastdatabase
+description: 'LastDatabase is a B2B and consumer contact-data marketplace selling email, phone and fax lead lists
+  organised by country, industry, category and job title, plus data enrichment and email verification. Developers
+  reach it two ways: the Lead Search API, a single Bearer-key REST endpoint (GET /api/leads/search) filterable by
+  type, country, city, industry, keyword and limit, sold on Free, Pro and Enterprise daily-request plans; and an
+  OAuth-protected remote MCP server at lastdatabase.com/mcp exposing search_people, unlock_people, verify_email
+  and get_credits tools gated by scopes. It publishes an OpenAPI 3.1 document, an llms.txt, a public Postman collection
+  and a Trust Center claiming ISO/IEC 27001.'
+url: https://raw.githubusercontent.com/api-evangelist/lastdatabase/refs/heads/main/apis.yml
+x-type: company
+x-source: apis-io-submission
+x-submitted-by: tech@lastdatabase.com, apis.io/add 2026-09-22
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (local-v5; was apis.io/add submission worked by the support sweep 2026-09-23;
+  host probed healthy (root 200, invented path 404, llms.txt 200))
+specificationVersion: '0.23'
+created: '2026-09-23'
+modified: '2026-09-23'
+tags:
+- Contact Data
+- Lead Generation
+- B2B Data
+- Email Verification
+- Data Enrichment
+- Sales Prospecting
+- MCP
+common:
+- type: Overlay
+  url: overlays/lastdatabase-lead-search-overlay.yaml
+- type: AgenticAccess
+  url: agentic-access/lastdatabase-agentic-access.yml
+- type: RateLimits
+  url: rate-limits/lastdatabase-rate-limits.yml
+- type: Plans
+  url: plans/lastdatabase-plans-pricing.yml
+- type: Spectral
+  url: rules/lastdatabase-rules.yml
+- type: JSONLD
+  url: json-ld/lastdatabase-context.jsonld
+- type: Vocabulary
+  url: vocabulary/lastdatabase-vocabulary.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/lastdatabase-data-model.yml
+- type: Conventions
+  url: conventions/lastdatabase-conventions.yml
+- type: Compliance
+  url: https://lastdatabase.com/trust-center
+- type: OAuthScopes
+  url: scopes/lastdatabase-scopes.yml
+- type: ErrorCatalog
+  url: errors/lastdatabase-error-codes.yml
+- type: ErrorCatalog
+  url: errors/lastdatabase-problem-types.yml
+- type: Conformance
+  url: conformance/lastdatabase-conformance.yml
+- type: LLMsTxt
+  url: llms/lastdatabase-llms.txt
+- type: ToolCrosswalk
+  url: mcp/lastdatabase-tool-crosswalk.yml
+- type: MCPServer
+  url: mcp/lastdatabase-mcp.yml
+- type: WellKnown
+  url: well-known/lastdatabase-well-known.yml
+- type: Hosts
+  url: hosts/lastdatabase-hosts.yml
+- type: Vendors
+  url: vendors/lastdatabase-vendors.yml
+- type: Authentication
+  url: authentication/lastdatabase-authentication.yml
+- type: TrustCenter
+  url: security/lastdatabase-trust-center.yml
+- type: DomainSecurity
+  url: security/lastdatabase-domain-security.yml
+- type: Website
+  url: https://lastdatabase.com/
+- type: Documentation
+  url: https://lastdatabase.com/docs
+- type: DeveloperPortal
+  url: https://lastdatabase.com/api
+- type: GettingStarted
+  url: https://lastdatabase.com/docs/getting-started
+- type: Pricing
+  url: https://lastdatabase.com/pricing
+- type: Blog
+  url: https://lastdatabase.com/blog
+- type: Support
+  url: https://lastdatabase.com/contact
+- type: SignUp
+  url: https://lastdatabase.com/register
+- type: Login
+  url: https://lastdatabase.com/login
+- type: TermsOfService
+  url: https://lastdatabase.com/terms
+- type: PrivacyPolicy
+  url: https://lastdatabase.com/privacy
+- type: FAQ
+  url: https://lastdatabase.com/faq
+- type: Postman
+  url: https://www.postman.com/lastdatabase-9706957/workspace/lastdatabase-developers
+image: https://lastdatabase.com/logo.png
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+apis:
+- aid: lastdatabase:lead-search-api
+  name: LastDatabase Lead Search API
+  description: Search LastDatabase email, phone and fax lead inventory by type, country, city, industry, keyword
+    and limit (default 25, capped at 100) through one GET endpoint, authenticated with an active API key sent as
+    a Bearer token; daily request limits follow the API plan.
+  humanURL: https://lastdatabase.com/docs/api
+  baseURL: https://lastdatabase.com
+  tags:
+  - Lead Search
+  - Contact Data
+  properties:
+  - type: OpenAPI
+    url: openapi/lastdatabase-openapi.yml
+  - type: OpenAPI
+    name: OpenAPI (provider-hosted)
+    url: https://lastdatabase.com/openapi.yaml
+  - type: Documentation
+    url: https://lastdatabase.com/docs/api
+  - type: Authentication
+    name: API Authentication
+    url: https://lastdatabase.com/docs/api/authentication
+  - type: Postman
+    url: https://www.postman.com/lastdatabase-9706957/workspace/lastdatabase-developers
+  - type: Pricing
+    name: API Plans
+    url: https://lastdatabase.com/api
+  - type: JSONSchema
+    url: json-schema/lastdatabase-lead-search-response-schema.json
+- aid: lastdatabase:mcp-server
+  name: LastDatabase MCP Server
+  description: 'OAuth-protected remote Model Context Protocol server at https://lastdatabase.com/mcp exposing four
+    scope-gated tools: search_people (non-charging masked B2B contact search), unlock_people (entitlement, suppression
+    and JIT-verified unlock), verify_email and get_credits.'
+  humanURL: https://lastdatabase.com/docs/mcp
+  baseURL: https://lastdatabase.com/mcp
+  tags:
+  - MCP
+  - Agents
+  - Contact Data
+  properties:
+  - type: Documentation
+    url: https://lastdatabase.com/docs/mcp
+  - type: Documentation
+    name: MCP Server Overview
+    url: https://lastdatabase.com/mcp-server
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 32
+  pass: local-v5

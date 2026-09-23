@@ -1,0 +1,386 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/lastdatabase/main/json-schema/lastdatabase-lead-search-response-schema.json",
+  "title": "LeadSearchResponse",
+  "x-generated": "2026-09-23",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/lastdatabase-openapi.yml#/components/schemas/LeadSearchResponse",
+  "type": "object",
+  "required": [
+    "status",
+    "type",
+    "count",
+    "data"
+  ],
+  "properties": {
+    "status": {
+      "type": "boolean",
+      "const": true
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "email",
+        "phone",
+        "fax"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "array",
+      "description": "Lead records. Available fields depend on the\nrequested inventory type and source data.\n",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/EmailLead"
+          },
+          {
+            "$ref": "#/$defs/PhoneLead"
+          },
+          {
+            "$ref": "#/$defs/FaxLead"
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "EmailLead": {
+      "type": "object",
+      "description": "Email lead record. Additional fields may be returned\nby the underlying email inventory.\n",
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "package_id": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "first_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "company_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "company_website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkedin_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "employee_size": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "revenue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seniority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "technology": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "job_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postal_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "FaxLead": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "package_id": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "company_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fax_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "optin_status": {
+          "type": [
+            "boolean",
+            "integer",
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "PhoneLead": {
+      "type": "object",
+      "description": "Phone lead record. Additional fields may be returned\nby the underlying phone inventory.\n",
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        },
+        "package_id": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "first_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "phone_number": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "postal_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "city": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "carrier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "company_website": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "linkedin_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "employee_size": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "revenue": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seniority": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "technology": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "optin_status": {
+          "type": [
+            "boolean",
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "updated_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

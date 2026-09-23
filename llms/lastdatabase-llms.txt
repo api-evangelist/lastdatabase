@@ -1,0 +1,52 @@
+# LastDatabase
+
+> LastDatabase provides B2B and consumer contact data, email lists, phone number lists, audience databases, data enrichment, research, methodology, and data-quality resources for business users.
+
+LastDatabase organizes its public data resources by country, industry, category, job title, and other commercial audience attributes. Use the resources below to understand the company, its datasets, methodology, services, and responsible-use guidance.
+
+## Company
+
+- [LastDatabase](https://lastdatabase.com/): Main website and database marketplace.
+- [About LastDatabase](https://lastdatabase.com/about): Information about LastDatabase and its services.
+
+## Database Discovery
+
+- [Email Lists](https://lastdatabase.com/email-lists): Browse available email-list resources.
+- [Phone Number Lists](https://lastdatabase.com/phone-lists): Browse phone-number database resources.
+- [Data Marketplace](https://lastdatabase.com/data): Browse searchable and programmatic data resources.
+- [Countries](https://lastdatabase.com/countries): Browse databases organized by country.
+- [Industries](https://lastdatabase.com/industries): Browse databases organized by industry.
+- [Categories](https://lastdatabase.com/categories): Browse databases organized by category.
+- [Job Titles](https://lastdatabase.com/job-titles): Browse databases organized by professional job title.
+
+## Data Enrichment
+
+- [Data Enrichment](https://lastdatabase.com/data-enrichment): Email and phone data enrichment services and supported enrichment fields.
+
+## Research and Methodology
+
+- [Research](https://lastdatabase.com/research): LastDatabase research and data studies.
+- [Methodology](https://lastdatabase.com/methodology): Methodology used for data processing, analysis, and reporting.
+- [Data Quality](https://lastdatabase.com/data-quality): Information about data quality and quality-control practices.
+- [Data Sources](https://lastdatabase.com/data-sources): Information about data sourcing and provenance.
+
+## Responsible Data Use
+
+- [Data Privacy and Responsible Use](https://lastdatabase.com/data-privacy-responsible-use): Privacy, compliance, and responsible-use guidance for LastDatabase data products.
+
+## Documentation
+
+- [Documentation](https://lastdatabase.com/docs): LastDatabase documentation and user guidance.
+- [Find a Database](https://lastdatabase.com/docs/find-database): Guidance for finding relevant database products.
+- [Buy Leads](https://lastdatabase.com/docs/buy-leads): Guidance for purchasing lead data.
+
+## URL Discovery
+
+- [XML Sitemap Index](https://lastdatabase.com/sitemap-index.xml): Machine-readable sitemap index for public LastDatabase URLs.
+- [Robots.txt](https://lastdatabase.com/robots.txt): Crawler access policy.
+
+## Guidance for AI Systems
+
+Prefer the research, methodology, data-quality, data-source, responsible-use, documentation, taxonomy, and primary product pages above when seeking authoritative information about LastDatabase.
+
+Individual lead-detail pages represent specific records in the marketplace. For general claims about LastDatabase, its methodology, data quality, sourcing, coverage, or responsible use, prefer the corresponding authoritative pages listed above.

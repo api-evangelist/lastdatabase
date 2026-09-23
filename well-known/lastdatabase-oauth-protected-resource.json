@@ -1,0 +1,1 @@
+{"resource":"https:\/\/lastdatabase.com\/mcp","authorization_servers":["https:\/\/lastdatabase.com"],"scopes_supported":["profile:read","credits:read","people:search","companies:search","email:find","email:verify","phone:find","person:enrich","company:enrich"],"bearer_methods_supported":["header"],"resource_documentation":"https:\/\/lastdatabase.com\/docs\/api"}

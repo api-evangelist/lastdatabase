@@ -1,0 +1,49 @@
+generated: '2026-09-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 2
+  own: 1
+  other_domain: 0
+  platform: 1
+  roles:
+  - collections
+  - website
+hosts:
+- host: lastdatabase.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - Compliance
+  - Website
+  - Documentation
+  - DeveloperPortal
+  - GettingStarted
+  - Pricing
+  - Blog
+  - Support
+  - SignUp
+  - Login
+  - TermsOfService
+  - PrivacyPolicy
+  - FAQ
+  serves:
+  - api
+  - docs
+  registrable_domain: lastdatabase.com
+  role: website
+  relation: own
+- host: www.postman.com
+  found_by:
+  - pointer
+  - vendor-detect
+  types:
+  - Postman
+  serves:
+  - api-collections
+  vendor: postman
+  registrable_domain: postman.com
+  role: collections
+  relation: platform

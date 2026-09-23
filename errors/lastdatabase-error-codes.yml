@@ -1,0 +1,15 @@
+generated: '2026-09-23'
+method: searched
+source: https://lastdatabase.com/docs/mcp
+format: mcp-tool-error-codes
+envelope: MCP tool error code
+problems:
+- {status: unstated, title: insufficient_scope, type: insufficient_scope, description: The connected authorization does not grant the required tool scope., remediation: 'Reconnect with the scope the tool requires (people:search, email:verify or credits:read).'}
+- {status: unstated, title: invalid_arguments, type: invalid_arguments, description: A tool received missing or invalid input., remediation: Correct the tool arguments.}
+- {status: unstated, title: search_filter_required, type: search_filter_required, description: Contact search requires at least one targeting filter., remediation: Supply at least one search_people filter.}
+- {status: unstated, title: purchase_required, type: purchase_required, description: The contact requires an eligible subscription allowance or previous paid purchase., remediation: Check get_credits or purchase allowance.}
+- {status: unstated, title: lead_unavailable, type: lead_unavailable, description: The selected lead is not currently available for unlock., remediation: Choose another lead.}
+- {status: unstated, title: verification_inconclusive, type: verification_inconclusive, description: JIT verification could not reach a definitive result. No record is consumed., remediation: Try another contact or retry later.}
+- {status: unstated, title: email_not_valid, type: email_not_valid, description: Verification did not qualify the email for verified delivery. The protected email is not revealed and no record is consumed., remediation: Try the next contact.}
+- {status: unstated, title: unknown_tool, type: unknown_tool, description: The requested MCP tool name is not recognized., remediation: Use a tool returned by tools/list.}
+note: The docs publish these as MCP tool error codes without HTTP statuses, so status is recorded as unstated rather than guessed. The REST 401 and 429 responses are in the OpenAPI.

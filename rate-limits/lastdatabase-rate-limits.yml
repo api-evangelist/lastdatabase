@@ -1,0 +1,39 @@
+generated: '2026-09-23'
+method: searched
+source: https://lastdatabase.com/api
+name: LastDatabase API Rate Limits
+limits:
+- name: Free daily requests
+  plan: Free
+  scope: per API key
+  window: 1 day
+  max: 100
+  limit: 100
+  limit_text: 100 API requests per day
+- name: Pro daily requests
+  plan: Pro
+  scope: per API key
+  window: 1 day
+  max: 10000
+  limit: 10000
+  limit_text: 10,000 API requests per day
+- name: Enterprise daily requests
+  plan: Enterprise
+  scope: per API key
+  window: 1 day
+  max: 100000
+  limit: 100000
+  limit_text: 100,000 API requests per day
+- name: Records per search request
+  endpoint: searchLeads
+  scope: per request
+  max: 100
+  limit_text: Defaults to 25 and is capped at 100.
+signaling:
+  status_on_exhaustion: 429
+  body: '{"message": "Daily API limit exceeded."} (OpenAPI 429 example)'
+  headers: none documented
+  reset: When the daily limit is reached, additional requests are blocked until the usage period resets.
+limit_count: 4
+note: The API page states "Each active API key receives the daily request limit associated with its plan." No RateLimit-* or Retry-After headers
+  are documented. The MCP search_people tool separately caps limit at 50 per request (https://lastdatabase.com/docs/mcp; recorded in mcp/lastdatabase-mcp.yml).
