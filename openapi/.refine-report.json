@@ -1,0 +1,23 @@
+{
+  "provider": "lastdatabase",
+  "sources": [
+    "_original/lastdatabase-openapi-original.yml",
+    "lastdatabase-openapi.yml"
+  ],
+  "outputs": [
+    "lastdatabase-leads-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/lastdatabase-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "lastdatabase-openapi-original.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "lastdatabase-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "tag 'Leads' spans 2 source specs (lastdatabase-openapi-original.yml, lastdatabase-openapi.yml): per-path servers applied",
+    "apis.yml register: written (+1 apis, 2 total)"
+  ],
+  "skipped": []
+}

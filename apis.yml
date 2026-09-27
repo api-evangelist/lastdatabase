@@ -105,39 +105,12 @@ maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 apis:
-- aid: lastdatabase:lead-search-api
-  name: LastDatabase Lead Search API
-  description: Search LastDatabase email, phone and fax lead inventory by type, country, city, industry, keyword
-    and limit (default 25, capped at 100) through one GET endpoint, authenticated with an active API key sent as
-    a Bearer token; daily request limits follow the API plan.
-  humanURL: https://lastdatabase.com/docs/api
-  baseURL: https://lastdatabase.com
-  tags:
-  - Lead Search
-  - Contact Data
-  properties:
-  - type: OpenAPI
-    url: openapi/lastdatabase-openapi.yml
-  - type: OpenAPI
-    name: OpenAPI (provider-hosted)
-    url: https://lastdatabase.com/openapi.yaml
-  - type: Documentation
-    url: https://lastdatabase.com/docs/api
-  - type: Authentication
-    name: API Authentication
-    url: https://lastdatabase.com/docs/api/authentication
-  - type: Postman
-    url: https://www.postman.com/lastdatabase-9706957/workspace/lastdatabase-developers
-  - type: Pricing
-    name: API Plans
-    url: https://lastdatabase.com/api
-  - type: JSONSchema
-    url: json-schema/lastdatabase-lead-search-response-schema.json
 - aid: lastdatabase:mcp-server
   name: LastDatabase MCP Server
-  description: 'OAuth-protected remote Model Context Protocol server at https://lastdatabase.com/mcp exposing four
-    scope-gated tools: search_people (non-charging masked B2B contact search), unlock_people (entitlement, suppression
-    and JIT-verified unlock), verify_email and get_credits.'
+  description: >-
+    OAuth-protected remote Model Context Protocol server at https://lastdatabase.com/mcp exposing four
+    scope-gated tools: search_people (non-charging masked B2B contact search), unlock_people (entitlement,
+    suppression and JIT-verified unlock), verify_email and get_credits.
   humanURL: https://lastdatabase.com/docs/mcp
   baseURL: https://lastdatabase.com/mcp
   tags:
@@ -150,6 +123,26 @@ apis:
   - type: Documentation
     name: MCP Server Overview
     url: https://lastdatabase.com/mcp-server
+- aid: lastdatabase:lastdatabase-leads-api
+  name: LastDatabase Leads API
+  description: Search supported LastDatabase lead inventory.
+  humanURL: https://lastdatabase.com/docs/api
+  baseURL: https://lastdatabase.com/mcp
+  tags:
+  - Leads
+  properties:
+  - type: OpenAPI
+    url: openapi/lastdatabase-leads-api-openapi.yml
+  - type: Documentation
+    url: https://lastdatabase.com/docs/api
+  - type: Authentication
+    url: https://lastdatabase.com/docs/api/authentication
+  - type: Postman
+    url: https://www.postman.com/lastdatabase-9706957/workspace/lastdatabase-developers
+  - type: Pricing
+    url: https://lastdatabase.com/api
+  - type: JSONSchema
+    url: json-schema/lastdatabase-lead-search-response-schema.json
 x-enrichment:
   date: '2026-09-23'
   status: enriched
