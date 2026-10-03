@@ -1,11 +1,21 @@
 openapi: 3.2.0
 info:
-  title: Lastdatabase Leads API
+  title: LastDatabase Lead Search Leads API
   version: 1.0.0
+  description: 'Official API specification for the LastDatabase Lead Search API.
+
+
+    Search supported email, phone, and fax lead inventory using
+
+    country, city, industry, keyword, and result-limit parameters.
+
+
+    Authentication uses an active LastDatabase API key supplied
+
+    as a Bearer token.'
   contact:
     name: LastDatabase
     url: https://lastdatabase.com/docs/api
-  description: 'Operations tagged Leads across 2 of this provider''s published API definitions: lastdatabase-openapi-original.yml, lastdatabase-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://lastdatabase.com
   description: Production
@@ -160,43 +170,8 @@ paths:
               example:
                 status: false
                 message: Daily API limit exceeded.
-    servers:
-    - url: https://lastdatabase.com
-      description: Production
 components:
   schemas:
-    LeadSearchResponse:
-      type: object
-      required:
-      - status
-      - type
-      - count
-      - data
-      properties:
-        status:
-          type: boolean
-          const: true
-        type:
-          type: string
-          enum:
-          - email
-          - phone
-          - fax
-        count:
-          type: integer
-          minimum: 0
-        data:
-          type: array
-          description: 'Lead records. Available fields depend on the
-
-            requested inventory type and source data.
-
-            '
-          items:
-            oneOf:
-            - $ref: '#/components/schemas/EmailLead'
-            - $ref: '#/components/schemas/PhoneLead'
-            - $ref: '#/components/schemas/FaxLead'
     FaxLead:
       type: object
       additionalProperties: true
@@ -251,96 +226,38 @@ components:
           const: false
         message:
           type: string
-    EmailLead:
+    LeadSearchResponse:
       type: object
-      description: 'Email lead record. Additional fields may be returned
-
-        by the underlying email inventory.
-
-        '
-      additionalProperties: true
+      required:
+      - status
+      - type
+      - count
+      - data
       properties:
-        id:
-          type:
-          - integer
-          - string
-        package_id:
-          type:
-          - integer
-          - string
-          - 'null'
-        first_name:
-          type:
-          - string
-          - 'null'
-        last_name:
-          type:
-          - string
-          - 'null'
-        email:
-          type:
-          - string
-          - 'null'
-        company_name:
-          type:
-          - string
-          - 'null'
-        company_website:
-          type:
-          - string
-          - 'null'
-        linkedin_url:
-          type:
-          - string
-          - 'null'
-        employee_size:
-          type:
-          - string
-          - 'null'
-        revenue:
-          type:
-          - string
-          - 'null'
-        seniority:
-          type:
-          - string
-          - 'null'
-        technology:
-          type:
-          - string
-          - 'null'
-        job_title:
-          type:
-          - string
-          - 'null'
-        industry:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-        state:
-          type:
-          - string
-          - 'null'
-        postal_code:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        created_at:
-          type:
-          - string
-          - 'null'
+        status:
+          type: boolean
+          const: true
+        type:
+          type: string
+          enum:
+          - email
+          - phone
+          - fax
+        count:
+          type: integer
+          minimum: 0
+        data:
+          type: array
+          description: 'Lead records. Available fields depend on the
+
+            requested inventory type and source data.
+
+            '
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/EmailLead'
+            - $ref: '#/components/schemas/PhoneLead'
+            - $ref: '#/components/schemas/FaxLead'
     PhoneLead:
       type: object
       description: 'Phone lead record. Additional fields may be returned
@@ -441,6 +358,96 @@ components:
           type:
           - string
           - 'null'
+    EmailLead:
+      type: object
+      description: 'Email lead record. Additional fields may be returned
+
+        by the underlying email inventory.
+
+        '
+      additionalProperties: true
+      properties:
+        id:
+          type:
+          - integer
+          - string
+        package_id:
+          type:
+          - integer
+          - string
+          - 'null'
+        first_name:
+          type:
+          - string
+          - 'null'
+        last_name:
+          type:
+          - string
+          - 'null'
+        email:
+          type:
+          - string
+          - 'null'
+        company_name:
+          type:
+          - string
+          - 'null'
+        company_website:
+          type:
+          - string
+          - 'null'
+        linkedin_url:
+          type:
+          - string
+          - 'null'
+        employee_size:
+          type:
+          - string
+          - 'null'
+        revenue:
+          type:
+          - string
+          - 'null'
+        seniority:
+          type:
+          - string
+          - 'null'
+        technology:
+          type:
+          - string
+          - 'null'
+        job_title:
+          type:
+          - string
+          - 'null'
+        industry:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        postal_code:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        created_at:
+          type:
+          - string
+          - 'null'
   securitySchemes:
     bearerAuth:
       type: http
@@ -454,6 +461,3 @@ components:
         Authorization: Bearer YOUR_API_KEY
 
         '
-x-refined-from:
-- lastdatabase-openapi-original.yml
-- lastdatabase-openapi.yml
