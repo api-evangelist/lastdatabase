@@ -1,0 +1,12 @@
+{
+ "url": "https://lastdatabase.com/openapi.yaml",
+ "requested_url": "https://lastdatabase.com/openapi.yaml",
+ "status": 200,
+ "content_type": "application/octet-stream",
+ "bytes": 10321,
+ "sha256": "ea27e226a983aafd65165090e2b9978e4587c2a6f532d76084c1cab43056f043",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
