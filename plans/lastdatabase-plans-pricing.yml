@@ -39,3 +39,29 @@ plans:
 plan_count: 3
 note: These are the Lead Search API plans on the API service page. Data-list purchases and record subscriptions (used by the MCP unlock path)
   are priced separately on https://lastdatabase.com/pricing and are not API pricing.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Pro
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
