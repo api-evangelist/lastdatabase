@@ -2,17 +2,17 @@
 kin_checks:
   slug: lastdatabase
   schema_version: 0.23.0
-  scored_at: '2026-10-03'
-  run_ts: 2026-10-03T024842
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
     apply in `na`. Everything else in rubric/scoring-0.23.0.yml was earned; counts
     below let you verify that.
   counts:
     total: 153
-    earned: 43
-    partial: 29
-    missed: 51
-    na: 30
+    earned: 41
+    partial: 30
+    missed: 55
+    na: 27
   checks:
   - id: newsroom_present
     status: missed
@@ -21,6 +21,8 @@ kin_checks:
   - id: multiple_apis
     status: missed
   - id: well_known_published
+    status: missed
+  - id: llms_txt_published
     status: missed
   - id: apis_json_self_hosted
     status: missed
@@ -110,6 +112,10 @@ kin_checks:
     status: missed
   - id: upsert_declared_conflict
     status: missed
+  - id: reversibility_documented
+    status: missed
+  - id: idempotency
+    status: missed
   - id: event_surface_described
     status: missed
   - id: well_known_catalog
@@ -118,10 +124,15 @@ kin_checks:
     status: missed
   - id: agent_card
     status: missed
+  - id: dry_run_mode
+    status: missed
   - id: dynamic_client_registration
     status: missed
   - id: agentic_commerce
     status: missed
+  - id: mcp_endpoint_discoverable
+    status: partial
+    earned: 2.0
   - id: contract_present
     status: partial
     earned: 18.0
@@ -248,13 +259,11 @@ kin_checks:
   - asyncapi_3_x
   - channels_defined
   - contract_self_operated
-  - dry_run_mode
   - fhir_capability_statement
   - fhir_resource_coverage
   - graphql_descriptions
   - graphql_sdl_present
   - graphql_type_depth
-  - idempotency
   - inbound_contract_published
   - messages_with_schema
   - os_code_of_conduct
@@ -272,6 +281,5 @@ kin_checks:
   - reg_smart_configuration
   - reg_training_data_summary
   - reg_write_surface
-  - reversibility_documented
   - security_schemes
   - server_bindings
