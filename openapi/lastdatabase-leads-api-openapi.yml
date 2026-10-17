@@ -172,49 +172,6 @@ paths:
                 message: Daily API limit exceeded.
 components:
   schemas:
-    FaxLead:
-      type: object
-      additionalProperties: true
-      properties:
-        id:
-          type:
-          - integer
-          - string
-        package_id:
-          type:
-          - integer
-          - string
-          - 'null'
-        company_name:
-          type:
-          - string
-          - 'null'
-        fax_number:
-          type:
-          - string
-          - 'null'
-        industry:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        optin_status:
-          type:
-          - boolean
-          - integer
-          - string
-          - 'null'
     ErrorResponse:
       type: object
       required:
@@ -226,38 +183,6 @@ components:
           const: false
         message:
           type: string
-    LeadSearchResponse:
-      type: object
-      required:
-      - status
-      - type
-      - count
-      - data
-      properties:
-        status:
-          type: boolean
-          const: true
-        type:
-          type: string
-          enum:
-          - email
-          - phone
-          - fax
-        count:
-          type: integer
-          minimum: 0
-        data:
-          type: array
-          description: 'Lead records. Available fields depend on the
-
-            requested inventory type and source data.
-
-            '
-          items:
-            oneOf:
-            - $ref: '#/components/schemas/EmailLead'
-            - $ref: '#/components/schemas/PhoneLead'
-            - $ref: '#/components/schemas/FaxLead'
     PhoneLead:
       type: object
       description: 'Phone lead record. Additional fields may be returned
@@ -446,6 +371,81 @@ components:
           - 'null'
         created_at:
           type:
+          - string
+          - 'null'
+    LeadSearchResponse:
+      type: object
+      required:
+      - status
+      - type
+      - count
+      - data
+      properties:
+        status:
+          type: boolean
+          const: true
+        type:
+          type: string
+          enum:
+          - email
+          - phone
+          - fax
+        count:
+          type: integer
+          minimum: 0
+        data:
+          type: array
+          description: 'Lead records. Available fields depend on the
+
+            requested inventory type and source data.
+
+            '
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/EmailLead'
+            - $ref: '#/components/schemas/PhoneLead'
+            - $ref: '#/components/schemas/FaxLead'
+    FaxLead:
+      type: object
+      additionalProperties: true
+      properties:
+        id:
+          type:
+          - integer
+          - string
+        package_id:
+          type:
+          - integer
+          - string
+          - 'null'
+        company_name:
+          type:
+          - string
+          - 'null'
+        fax_number:
+          type:
+          - string
+          - 'null'
+        industry:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        optin_status:
+          type:
+          - boolean
+          - integer
           - string
           - 'null'
   securitySchemes:
