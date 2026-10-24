@@ -30,19 +30,37 @@ artifacts:
   hosts/lastdatabase-hosts.yml:
     method: derived
     evidence: declared in the artifact
+  integrations/lastdatabase-integration-edges.yml:
+    method: searched
+    evidence: declared in the artifact
   json-ld/lastdatabase-context.jsonld:
     method: unknown
     evidence: no authorship recorded
   json-schema/lastdatabase-lead-search-response-schema.json:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-24T090406.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-24T161608.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   llms/lastdatabase-llms-provenance.yml:
@@ -59,14 +77,17 @@ artifacts:
     evidence: declared in the artifact
   openapi/_original/lastdatabase-openapi-original.yml:
     method: harvested
-    evidence: found in openapi/_original/; the fetch URL and bytes were not recorded, so byte-identity
-      to the provider's source is unverified
-  openapi/lastdatabase-openapi.yml:
+    evidence: byte-identical to https://lastdatabase.com/openapi.yaml (sha256 ea27e226a983, fetched 2026-10-04)
+  openapi/_original/lastdatabase-openapi.yml:
+    method: harvested
+    evidence: the same operations as https://lastdatabase.com/openapi.yaml (sha256 ea27e226a983, fetched
+      2026-10-04)
+  openapi/lastdatabase-leads-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   overlays/lastdatabase-lead-search-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   packages/lastdatabase-packages.yml:
     method: unknown
     evidence: no authorship recorded
