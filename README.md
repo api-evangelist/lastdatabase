@@ -1,4 +1,4 @@
-# lastdatabase
+# LastDatabase
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,4 +64,151 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-LastDatabase is a B2B and consumer contact-data marketplace. This repository profiles its developer surface: the Lead Search API (one Bearer-key GET endpoint, described by the provider's own OpenAPI at https://lastdatabase.com/openapi.yaml) and its OAuth-protected remote MCP server at https://lastdatabase.com/mcp. The index of everything here is [apis.yml](apis.yml).
+LastDatabase is a B2B and consumer contact-data marketplace selling email, phone and fax lead lists organised by country, industry, category and job title, plus data enrichment and email verification. Developers reach it two ways: the Lead Search API, a single Bearer-key REST endpoint (GET /api/leads/search) filterable by type, country, city, industry, keyword and limit, sold on Free, Pro and Enterprise daily-request plans; and an OAuth-protected remote MCP server at lastdatabase.com/mcp exposing search_people, unlock_people, verify_email and get_credits tools gated by scopes. It publishes an OpenAPI 3.1 document, an llms.txt, a public Postman collection and a Trust Center claiming ISO/IEC 27001.
+
+**Areas:** Contact Data · Lead Generation · B2B Data · Email Verification · Data Enrichment · Sales Prospecting · MCP
+
+## LastDatabase on APIs.io
+
+Everything profiled for LastDatabase is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lastdatabase/](https://apis.io/providers/lastdatabase/)** — or go straight to one of the APIs or properties below.
+
+### APIs (2)
+
+- [LastDatabase MCP Server](https://apis.io/apis/lastdatabase/mcp-server/) — OAuth-protected remote Model Context Protocol server at https://lastdatabase.com/mcp exposing four scope-gated tools: search_people (non-charging masked B2B…
+- [LastDatabase Leads API](https://apis.io/apis/lastdatabase/lastdatabase-leads-api/) — Search supported LastDatabase lead inventory.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [LastDatabase MCP Server](https://apis.io/servers/lastdatabase/lastdatabase-mcp-server/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Lastdatabase Agentic Access](https://apis.io/agentic-access/lastdatabase/lastdatabase-agentic-access/)
+
+#### JSON Schema (1)
+
+The data models the API reads and writes.
+
+- [LeadSearchResponse](https://apis.io/schemas/lastdatabase/lastdatabase-lead-search-response/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Lastdatabase Context](https://apis.io/jsonld/lastdatabase/lastdatabase-context/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Lastdatabase Lead Search Overlay](https://apis.io/overlays/lastdatabase/lastdatabase-lead-search-overlay/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [LastDatabase API Rules](https://apis.io/rules/lastdatabase/lastdatabase-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Lastdatabase Authentication](https://apis.io/security/lastdatabase/lastdatabase-authentication/)
+- [Lastdatabase Domain Security](https://apis.io/security/lastdatabase/lastdatabase-domain-security/)
+- [Lastdatabase Trust Center](https://apis.io/security/lastdatabase/lastdatabase-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Lastdatabase Scopes](https://apis.io/scopes/lastdatabase/lastdatabase-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Lastdatabase Plans Pricing](https://apis.io/plans/lastdatabase/lastdatabase-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Lastdatabase Rate Limits](https://apis.io/rate-limits/lastdatabase/lastdatabase-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://lastdatabase.com/)
+- [Documentation](https://lastdatabase.com/docs)
+- [Getting started](https://lastdatabase.com/docs/getting-started)
+- [Pricing](https://lastdatabase.com/pricing)
+- [Sign up](https://lastdatabase.com/register)
+- [Support](https://lastdatabase.com/contact)
+- [Blog](https://lastdatabase.com/blog)
+- [Compliance](https://lastdatabase.com/trust-center)
+- [Terms of service](https://lastdatabase.com/terms)
+- [Privacy policy](https://lastdatabase.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 66.9** — exemplar · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 66.9 |
+| Contract governance | 35.6 |
+| Operational transparency | 31.6 |
+| Developer ergonomics | 61.2 |
+| Access clarity | 92.1 |
+
+**Agent readiness 58.6** — agent-native
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | unknown |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 39.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lastdatabase/](https://apis.io/providers/lastdatabase/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for LastDatabase: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lastdatabase/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
